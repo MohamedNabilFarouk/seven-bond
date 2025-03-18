@@ -29,14 +29,14 @@
               <div class="single-products-details"> 
                 
                 <div class="product-tab-box">
-                  <ul class="nav nav-tabs tab-menu">
+                  <ul class="nav nav-tabs tab-menu" id="tab-list">
                       <li class="active"><a href="#desc" data-toggle="tab">Descriprion</a></li>
                       <li><a href="#Features" data-toggle="tab">Features</a></li>
                       <li><a href="#Technical" data-toggle="tab">Technical Data</a></li>
                       <li><a href="#Advantages" data-toggle="tab">Advantages</a></li>
                   </ul>
                   <div class="tab-content">
-                      <div class="tab-pane" id="desc">
+                      <div class="tab-pane active" id="desc">
                         <div class="product-content-box">
                           <div class="row">
                               <div class="col-md-6 img-box">
@@ -295,5 +295,19 @@
       </div>
   </div>
 </section>
+
+<script>
+  // Select all tab list items
+  const tabs = document.querySelectorAll('#tab-list li');
+
+  tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+          // Remove active class from all tabs
+          tabs.forEach(t => t.classList.remove('active'));
+          // Add active class to the clicked tab (li)
+          this.classList.add('active'); // This adds class to <li>
+      });
+  });
+</script>
 
 @stop
