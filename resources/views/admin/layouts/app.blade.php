@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>SMET - Dashboard</title>
+    <title>Seven-bond - Dashboard</title>
     <meta name="title" content="" />
     <meta name="description"
         content="{{ $site_settings['meta_description_en']}}" />

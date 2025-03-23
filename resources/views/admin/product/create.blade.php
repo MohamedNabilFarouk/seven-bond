@@ -35,64 +35,98 @@
             <form method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
                 @csrf
 
+                <div class="row">
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class="required form-label">Title En</label>
+                        <input type='text' name="title" class="form-control" value="{{ old('title') }}" />
+                    </div>
 
-                <div class="form-group mb-10">
-                    <label for="exampleFormControlInput1" class="required form-label">Title En</label>
-                    <input type='text' name="title" class="form-control" value="{{ old('title') }}" />
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class="required form-label">Title Ar</label>
+                        <input type='text' name="title_ar" class="form-control" value="{{ old('title_ar') }}" />
+                    </div>
                 </div>
-
-                <div class="form-group mb-10">
-                    <label for="exampleFormControlInput1" class="required form-label">Title Ar</label>
-                    <input type='text' name="title_ar" class="form-control" value="{{ old('title_ar') }}" />
-                </div>
-
                 <div class="form-group mb-10">
                     <label for="exampleFormControlInput1" class="required form-label">Category</label>
-                   <select class="form-control" name='category_id'>
-                    @foreach($categories as $category)
-                    <option value='null' >Select Category</option>
-                    <option value="{{ $category->id }}">{{ $category->title_en  }}</option>
-                    @endforeach
-                   </select>
+                    <select class="form-control" name='category_id'>
+                        <option value='null'>Select Category</option>
+                        @foreach ($categories as $category)  
+                            <option value="{{ $category->id }}">{{ $category->title_en }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class=" form-label">description En</label>
+                        <textarea name="des" class="form-control form-control-solid" rows="2" id="editor">{{ old('des') }}</textarea>
+
+                    </div>
+
+
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class=" form-label">description AR</label>
+                        <textarea name="des_ar" class="form-control form-control-solid" rows="2" id="editor">{{ old('des_ar') }}</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class=" form-label">Features En</label>
+                        <textarea name="features_text" class="form-control form-control-solid" rows="2" id="editor">{{ old('features_text') }}</textarea>
+                    </div>
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class=" form-label">Features Ar</label>
+                        <textarea name="features_text_ar" class="form-control form-control-solid" rows="2" id="editor">{{ old('features_text_ar') }}</textarea>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group mb-10 col-md-6">
+                        <label for="exampleFormControlInput1" class=" form-label">Advantages En</label>
+                        <textarea name="advantage_text" class="form-control form-control-solid" rows="1" id="editor">{{ old('advantage_text') }}</textarea>
+                    </div>
+
+
+                    <div class="form-group mb-10 col-md-5">
+                        <label for="exampleFormControlInput1" class=" form-label">Advantages Ar</label>
+                        <textarea name="advantage_text_ar" class="form-control form-control-solid" rows="1" id="editor">{{ old('advantage_text_ar') }}</textarea>
+                    </div>
                 </div>
 
 
-                <div class="form-group mb-10">
-                    <label for="exampleFormControlInput1" class="required form-label">description En</label>
-                    <textarea name="des" class="form-control form-control-solid" rows="2" id="editor">{{ old('des') }}</textarea>
+                <div class="row mb-2">
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1" class="required form-label">Image</label>
+                        <input class="image_name" type="file" name="image" value="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1" class="required form-label">Features Image</label>
+                        <input class="image_name" type="file" name="features_image" value="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1" class=" form-label">technical data image</label>
+                        <input class="image_name" type="file" name="technical_data_image" value="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Advantage Image</label>
+                        <input class="image_name" type="file" name="advantage_image" value="">
+                    </div>
+
+                    <div class=" form-group" style="margin-top: 30px">
+                        <label for="exampleFormControlInput1" class="form-label">Gallery</label>
+    
+                        <input type="file" name="gallery[]" class="image_name" multiple>
+                    </div>
 
                 </div>
+                
 
-
-                <div class="form-group mb-10">
-                    <label for="exampleFormControlInput1" class="required form-label">description AR</label>
-                    <textarea name="des_ar" class="form-control form-control-solid" rows="2" id="editor">{{ old('des_ar') }}</textarea>
-                </div>
-
-
-
-                <div class="form-group mb-10">
-                    <label for="exampleFormControlInput1" class="required form-label">Price</label>
-                    <input type='number' name="price" class="form-control" value="{{ old('price') }}" />
-                </div>
-
-
-
-                <div class="form-group">
-                    <label for="exampleFormControlInput1" class="required form-label">Image</label>
-                    <input class="image_name" type="file" name="image" value="">
-                </div>
-
-                <div class="col-sm-4 ">
-                <label for="exampleFormControlInput1" class="required form-label">Gallery</label>
-
-                                            <input type="file" name="gallery[]"   class="image_name" multiple>
-                                        </div>
+              
 
 
                 <div class="text-right mb-5">
                     <!-- <input type="submit" name="add" class="btn btn-success" value="Add"> -->
-                    <button type="submit"  class="btn btn-success" >Add</button>
+                    <button type="submit" class="btn btn-success">Add</button>
                 </div>
             </form>
         </div>

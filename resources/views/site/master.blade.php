@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   </head>
   
 
@@ -40,7 +41,7 @@
                         <!--Top Left-->
                         <div class="top-left pull-left">
                             <ul class="links-nav clearfix">
-                                <li>Welcome to 7 BOND Company</li>
+                                <li>Welcome to SEVEN BOND Company</li>
                             </ul>
                         </div>
     
@@ -65,29 +66,30 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="main-logo">
-                                <a class="navbar-brand pr-50" href="#"><img src="{{ asset('site/images/rsz_logo.png') }}" class="logo" alt=""></a>
+                                <a class="navbar-brand pr-50" href="#"><img src="{{ $site_settings->logo }}" class="logo" alt="Seven-Bond"></a>
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="header-contact-info">
                                 <ul>
-                                    <li>
+                                    {{-- <li>
                                         <div class="iocn-holder">
                                             <span class="fa fa-home"></span>
                                         </div>
                                         <div class="text-holder">
     
-                                            <h6>13AH, San Francisco,</h6>
-                                            <p>Newyork ,USA 10002</p>
+                                            <h6>Address</h6>
+                                            <p>{{app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar}}</p>
+                                            
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <div class="iocn-holder">
                                             <span class="fa fa-envelope"></span>
                                         </div>
                                         <div class="text-holder">
                                             <h6>Send Your Mail At</h6>
-                                            <p>7bond@Support.Com</p>
+                                            <p>{{ $site_settings->email }}</p>
                                         </div>
                                     </li>
                                     <li>
@@ -95,8 +97,8 @@
                                             <span class="fa fa-clock-o"></span>
                                         </div>
                                         <div class="text-holder">
-                                            <h6>Working Hours</h6>
-                                            <a href="#"><p>Mon-Sat:9.30am To 7.00pm</p></a>
+                                            <h6>Phone</h6>
+                                            <a href="#"><p>{{ $site_settings->phone }}</p></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -140,7 +142,7 @@
                                                 <li><a href="#">Category 3</a></li>
                                             </ul>
                                         </li>
-                                        <li ><a href="#">Blog</a>
+                                        <li ><a href="{{ route('all.blogs') }}">Blog</a>
                                             <!-- <ul>
                                                 <li><a href="blog-1.html">Blog Default</a></li>
                                                 <li><a href="blog-2.html">Blog Clasic</a></li>
@@ -160,27 +162,7 @@
                             </nav>
                             
                             <!-- Main Menu End-->
-                            <div class="outer-box float-right">
-                                <!--Search Box-->
-                                <div class="search-box-outer">
-                                    <div class="dropdown">
-                                        <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                        <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                            <li class="panel-outer">
-                                                <div class="form-container">
-                                                    <form method="post" action="https://html.tonatheme.com/2018/Buildin/blog.html">
-                                                        <div class="form-group">
-                                                            <input type="search" name="field-name" value="" placeholder="Search Here" required>
-                                                            <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="reservation-form-btn consult-form-btn"><span class="icon flaticon-menu-options"></span></div>
-                            </div>
+                          
                         </div>
                         
                     </div>
@@ -214,7 +196,7 @@
                                             <li><a href="#">Category 3</a></li>
                                         </ul>
                                     </li>
-                                    <li ><a href="#">Blog</a>
+                                    <li ><a href="{{ route('all.blogs') }}">Blog</a>
                                         <!-- <ul>
                                             <li><a href="blog-1.html">Blog Default</a></li>
                                             <li><a href="blog-2.html">Blog Clasic</a></li>
@@ -359,6 +341,13 @@
   <script src="{{ asset('site/js/jquery.fancybox-media.js')}}"></script>
   
   <script src="{{ asset('site/js/script.js')}}"></script>
+
+  <script>
+    <!-- Include jQuery and Flexslider scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
   
   </body>
   

@@ -1,10 +1,11 @@
 @extends('site.master')
 
 @section('content')
+@include('admin.includes.messages')
     <!--Main Slider-->
     <section class="main-slider">
         <video autoplay muted loop class="rounded shadow-lg" style="width: 100%; height: auto;">
-            <source src="{{ asset('site/img/bannerVid.mp4') }}" type="video/mp4">
+            <source src="{{ $site_settings->banner_vid }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -17,15 +18,13 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="image-two">
-                        <img src="{{ asset('site/img/aboutImage.jpeg') }}" alt="">
+                        <img src="{{ $site_settings->about_image}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="about-column">
                         <h2>About our company</h2>
-                        <div class="text">Lorem Ipsum is simply text of the. Lorem Ipsum is simply text of the stry stext
-                            of the stry simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply
-                            text of the. Lorem Ipsum is simply text of the stry Lorem Ipsum is simply text of the.</div>
+                        <div class="text"> {!! app()->getLocale() == 'en' ? $site_settings->about_des: $site_settings->about_des_ar !!}</div>
 
                         <div class="link"><a href="#" class="theme-btn btn-style-one">Read more</a></div>
                     </div>
@@ -172,7 +171,7 @@
                                 <img src="{{ asset($p->image) }}" alt="">
                                 <div class="box-content">
                                     <ul class="icon">
-                                        <li><a href="#"><i class="fa fa-link"></i> </a> </li>
+                                        <li><a href="{{ route('product.details',$p->slug) }}"><i class="fa fa-link"></i> </a> </li>
 
                                     </ul>
                                 </div>
@@ -185,7 +184,7 @@
 
             </div>
 
-            <div class="link text-center mt-20"><a href="project.html" class="theme-btn btn-style-one">View More</a>
+            <div class="link text-center mt-20"><a href="{{ route('Allshop') }}" class="theme-btn btn-style-one">View More</a>
             </div>
         </div>
     </section>
@@ -204,7 +203,7 @@
                                 <i class="flaticon-apartment"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="350">0</span>
+                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->completed_projects }}">0</span>
                                 <p>Successfull Projects</p>
                             </div>
                         </div>
@@ -219,7 +218,7 @@
                                 <i class="flaticon-construction"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="275">0</span>
+                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->expert_worker }}">0</span>
                                 <p>Expert Worker</p>
                             </div>
                         </div>
@@ -234,7 +233,7 @@
                                 <i class="flaticon-favorite-1"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="125">0</span>
+                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->awards_won }}">0</span>
                                 <p>Awards Wining </p>
                             </div>
                         </div>
@@ -250,7 +249,7 @@
                                 <i class="flaticon-construction-1"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="12">0</span>
+                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->experience }}">0</span>
                                 <p>Year of experience</p>
                             </div>
                         </div>
@@ -269,102 +268,35 @@
             <!--Sortable Gallery-->
             <div class="mixitup-gallery">
 
-                <!--Filter-->
-                <div class="filters clearfix">
-                    <ul class="filter-tabs style-two filter-btns">
-                        <li class="filter active" data-role="button" data-filter="all"><span>View All</span></li>
-                        <li class="filter" data-role="button" data-filter=".Renovation"><span>Renovation</span></li>
-                        <li class="filter" data-role="button" data-filter=".Isolation"><span>Isolation</span></li>
-                        <li class="filter" data-role="button" data-filter=".Construction"><span>Construction</span></li>
-                        <li class="filter" data-role="button" data-filter=".Architecutre"><span>Architecutre</span></li>
-                    </ul>
-                </div>
+           
 
                 <div class="filter-list row clearfix">
 
 
+                    @foreach ($projects as $p)
                     <!-- projects block one -->
-                    <div class="projects-block-one mix all Renovation col-lg-4 col-md-6 col-sm-12">
+                    <div class="projects-block-one mix all col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/10.jpeg') }}" alt="">
+                            <img src="{{ asset($p->image) }}" alt="{{ $p->title_field }}" style="height:260px;">
                             <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/1.jpeg')}}" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                                <a href="{{ route('project.details',$p->slug) }}">
+                                     <h4 style="color: #ffc107; margin-top: 100px;">{{ strtoupper($p->title_field) }}</h4>
+                                </a>
+                                {{-- <ul class="icon">
+                                    <li><a href="{{ route('project.details',$p->slug) }}"><i class="fa fa-link"></i> </a> </li>
 
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all Construction col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/12.jpeg') }}" alt="">
-                            <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/13.jpeg')}}" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
-
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all Isolation Architecutre col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/14.jpeg') }}" alt="">
-                            <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/15.jpeg')}}" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all Construction col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/16.jpeg') }}" alt="">
-                            <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/13.jpeg')}}" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all Construction col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/17.jpeg') }}" alt="">
-                            <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/13.jpeg')}}" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all Construction col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset('site/img/gallery/18.jpeg') }}" alt="">
-                            <div class="box-content">
-                                <ul class="icon">
-                                    <!-- <li><a href="img/gallery/13.jpeg" data-fancybox-group="example-gallery" class="view lightbox-image"><i class="fa fa-search"></i></a> </li> -->
-                                    <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
 
 
                 </div>
 
             </div>
 
-            <div class="link text-center mt-20"><a href="#" class="theme-btn btn-style-one">View More</a></div>
+            <div class="link text-center mt-20"><a href="{{ route('allProjects') }}" class="theme-btn btn-style-one">View More</a></div>
         </div>
     </section>
 
@@ -376,15 +308,14 @@
                     <div class="request-callback sp-two">
                         <div class="image"><img src="{{ asset('site/img/background/4.jpg') }}" alt=""></div>
                         <h2>Request A Call Back</h2>
-                        <div class="text">Lorem Ipsum is simply text of the. Lorem Ipsum is simply text of the stry stext
-                            of the stry simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply
-                            text of the. </div>
+                        <div class="text">
+                            Get in touch with us through our channels below for any questions or queries and one of our representatives will get back to you as soon.
+                             </div>
                         <ul class="list-style-five mb-40">
-                            <li><i class="fa fa-map-marker"></i><strong>Address:</strong> 121, Park Drive, Varick Str
-                                <br>New York, NY 10012, USA
+                            <li><i class="fa fa-map-marker"></i><strong>Address:</strong>{{app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar}}
                             </li>
-                            <li><i class="fa fa-phone"></i><strong>Phone:</strong> (123) 0200 12345 </li>
-                            <li><i class="fa fa-envelope"></i><strong>Email:</strong> mailus@starting.com</li>
+                            <li><i class="fa fa-phone"></i><strong>Phone:</strong> {{ $site_settings->phone }} </li>
+                            <li><i class="fa fa-envelope"></i><strong>Email:</strong> {{$site_settings->email}}</li>
                         </ul>
                         <ul class="social-icon-four">
                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -397,48 +328,47 @@
                 <div class="col-lg-6">
 
                     <div class="default-form-area sp-two">
-                        <form id="contact-form" name="contact_form" class="contact-form style-three"
-                            action="https://html.tonatheme.com/2018/Buildin/inc/sendmail.php" method="post">
+                        <form method="post" action="{{ route('sendMessage') }}" class="contact-form style-three">
+                            @csrf
                             <div class="row clearfix">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-social"></span>
-                                        <input type="text" name="form_name" class="form-control" value=""
+                                        <input type="text" name="name" class="form-control" value=""
                                             placeholder="Name" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-note-1"></span>
-                                        <input type="email" name="form_email" class="form-control required email"
+                                        <input type="email" name="email" class="form-control required email"
                                             value="" placeholder="Email" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-favorite"></span>
-                                        <input type="text" name="form_phone" class="form-control" value=""
+                                        <input type="text" name="phone" class="form-control" value=""
                                             placeholder="Phone">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-favorite"></span>
-                                        <input type="text" name="form_subject" class="form-control" value=""
+                                        <input type="text" name="subject" class="form-control" value=""
                                             placeholder="Subject">
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-draw"></span>
-                                        <textarea name="form_message" class="form-control textarea required" placeholder="Your Message"></textarea>
+                                        <textarea name="message" class="form-control textarea required" placeholder="Your Message"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="contact-section-btn">
                                 <div class="form-group">
-                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden"
-                                        value="">
+                                  
                                     <button class="theme-btn btn-style-one" type="submit"
                                         data-loading-text="Please wait...">Submit Now</button>
                                 </div>
@@ -512,99 +442,31 @@
                 <h2>Latest From Blog</h2>
             </div>
             <div class="three-item-carousel owl-carousel owl-theme owl-dot-none owl-nav-none">
+                @foreach($blogs as $b)
                 <!--New Block One-->
                 <div class="news-block-one">
                     <figure class="image">
-                        <img src="{{ asset('site/img/resource/news-1.jpg') }}" alt="News">
+                        <img src="{{ $b->image }}" alt="{{ $b->title }}" style="height:260px;">
                         <figcaption class="overlay">
                             <div class="box">
                                 <div class="content">
-                                    <a href="blog-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    <a href="{{ route('blog.details',$b->slug) }}"><i class="fa fa-link" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </figcaption>
-                        <div class="date">21 <br>April</div>
+                        <div class="date">{{ \Carbon\Carbon::parse($b->updated_at)->format('d') }} <br>{{ \Carbon\Carbon::parse($b->updated_at)->format('F') }}</div>
                     </figure>
                     <div class="lower-content">
                         <div class="pl-30 pr-30">
-                            <h4><a href="blog-details.html">Construction and Building Materials</a></h4>
+                            <h4><a href="{{ route('blog.details',$b->slug) }}">{{ $b->title }}</a></h4>
                             <div class="text">
-                                <p>know how to pursue pleasure rationally seds encounter consequences.</p>
+                                <p>{!! \Illuminate\Support\Str::limit($b->summary, 100, '...') !!}</p>
                             </div>
-                        </div>
-
-                        <div class="post-meta">
-                            <ul>
-                                <li><i class="fa fa-user" aria-hidden="true"></i>admin</li>
-                                <li><i class="fa fa-heart-o" aria-hidden="true"></i>350</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>30</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
                 <!-- end -->
-                <!--New Block One-->
-                <div class="news-block-one">
-                    <figure class="image">
-                        <img src="{{ asset('site/img/resource/news-2.jpg') }}" alt="News">
-                        <figcaption class="overlay">
-                            <div class="box">
-                                <div class="content">
-                                    <a href="blog-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </figcaption>
-                        <div class="date">21 <br>April</div>
-                    </figure>
-                    <div class="lower-content">
-                        <div class="pl-30 pr-30">
-                            <h4><a href="blog-details.html">Economists see construction strengthening</a></h4>
-                            <div class="text">
-                                <p>know how to pursue pleasure rationally seds encounter consequences.</p>
-                            </div>
-                        </div>
-
-                        <div class="post-meta">
-                            <ul>
-                                <li><i class="fa fa-user" aria-hidden="true"></i>admin</li>
-                                <li><i class="fa fa-heart-o" aria-hidden="true"></i>350</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>30</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- end -->
-                <!--New Block One-->
-                <div class="news-block-one">
-                    <figure class="image">
-                        <img src="{{ asset('site/img/resource/news-3.jpg') }}" alt="News">
-                        <figcaption class="overlay">
-                            <div class="box">
-                                <div class="content">
-                                    <a href="blog-details.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </figcaption>
-                        <div class="date">21 <br>April</div>
-                    </figure>
-                    <div class="lower-content">
-                        <div class="pl-30 pr-30">
-                            <h4><a href="blog-details.html">Lean construction improves project delivery</a></h4>
-                            <div class="text">
-                                <p>know how to pursue pleasure rationally seds encounter consequences.</p>
-                            </div>
-                        </div>
-
-                        <div class="post-meta">
-                            <ul>
-                                <li><i class="fa fa-user" aria-hidden="true"></i>admin</li>
-                                <li><i class="fa fa-heart-o" aria-hidden="true"></i>350</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>30</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- end -->
+            @endforeach
 
             </div>
         </div>

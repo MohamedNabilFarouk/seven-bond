@@ -46,13 +46,24 @@ class productController extends Controller
             'des' => 'string',
             'des_ar' => 'string',
             'image' => 'required',
-            'price' => 'required',
 
         ]);
         $data = $request->except(['gallery']);
         if ($request -> has('image')) {
             $image = $this -> saveImages($request -> image, 'site/img/products');
             $data['image'] = $image;
+        }
+        if ($request -> has('features_image')) {
+            $image = $this -> saveImages($request -> features_image, 'site/img/products');
+            $data['features_image'] = $image;
+        }
+        if ($request -> has('technical_data_image')) {
+            $image = $this -> saveImages($request -> technical_data_image, 'site/img/products');
+            $data['technical_data_image'] = $image;
+        }
+        if ($request -> has('advantage_image')) {
+            $image = $this -> saveImages($request -> advantage_image, 'site/img/products');
+            $data['advantage_image'] = $image;
         }
 
         DB::beginTransaction();
@@ -105,8 +116,6 @@ class productController extends Controller
 
             'des' => 'string',
             'des_ar' => 'string',
-
-            'price' => 'required',
 
         ]);
 

@@ -33,12 +33,15 @@ Route::get('/dashboard', function () {
 // site route
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/products', 'HomeController@allShop')->name('Allshop');
+Route::get('/projects', 'HomeController@allProjects')->name('allProjects');
 Route::get('/products/{category_id}', 'HomeController@shop')->name('shop');
 Route::get('/product/{slug}', 'HomeController@productDetails')->name('product.details');
+Route::get('/project/{slug}', 'HomeController@projectDetails')->name('project.details');
 Route::get('/blog/{slug}', 'HomeController@blogDetails')->name('blog.details');
 Route::get('/blogs/', 'HomeController@blogs')->name('all.blogs');
 Route::post('/subscribe/', 'HomeController@subscribe')->name('add.subscriber');
 Route::get('/aboutus', 'HomeController@about')->name('about');
+Route::get('/technical-data', 'HomeController@technical_data')->name('technical_data');
 Route::get('/contactus', 'HomeController@contact')->name('contact');
 Route::post('/sendMessage', 'HomeController@set_contactus')->name('sendMessage');
 
@@ -49,7 +52,7 @@ Route::post('/sendMessage', 'HomeController@set_contactus')->name('sendMessage')
 
 
 Auth::routes(['register' => false]);
-Route::group(['middleware' => ['role:admin','auth']],function(){
+Route::group(['middleware' => ['role:admin','auth'] ,'prefix'=>'admin'],function(){
 
 
 // admin route
@@ -57,6 +60,7 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('/product','productController');
 Route::get('AddProduct','productController@create')->name('product.create');
 Route::resource('/service','servicesController');
+Route::resource('/project','ProjectController');
 Route::resource('/category','CategoriesController');
 Route::resource('/team','TeamController');
 Route::resource('/blog','blogsController');
@@ -74,6 +78,10 @@ Route::resource('/subscribers','SubscribeController');
   Route::get('site_settings/customSections', function(){
         return view('admin.settings.site.custom_sections.about_section_2');   
   })->name('settings.site.aboutsec');
+
+  Route::get('site_settings/technicalData', function(){
+    return view('admin.technical_data.index');   
+})->name('site.technicalData');
   Route::put('site_settings', 'SiteSettingController@generalUpdate')->name('settings.site.update');
 
   Route::get('social_settings', 'SiteSettingController@socialShow')->name('settings.social.show');

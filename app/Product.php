@@ -8,7 +8,7 @@ class Product extends Model
 {
     //
     protected $guarded=[];
-    protected $appends = array('title_field','des_field');
+    protected $appends = array('title_field','des_field','features_field','advantage_field');
 
     public function getImageAttribute($value)
     {
@@ -71,6 +71,24 @@ public function incrementSlug($slug) {
             return $this->{'des_'.app()->getLocale()};
             }else{
             return $this->{'des'};
+    
+            }
+    }
+    public function getFeaturesFieldAttribute()
+    {
+        if(app()->getLocale()== 'ar'){
+            return $this->{'features_text_'.app()->getLocale()};
+            }else{
+            return $this->{'features_text'};
+    
+            }
+    }
+    public function getAdvantageFieldAttribute()
+    {
+        if(app()->getLocale()== 'ar'){
+            return $this->{'features_text_'.app()->getLocale()};
+            }else{
+            return $this->{'features_text'};
     
             }
     }

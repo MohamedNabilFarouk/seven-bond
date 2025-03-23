@@ -57,7 +57,6 @@
                         <th class="ps-4 min-w-325px rounded-start">Product</th>
                         <th class="ps-4 min-w-325px rounded-start">Category</th>
                         <th class="ps-4 min-w-325px rounded-start">Description</th>
-                        <th class="min-w-200px">Price</th>
                         <th class="min-w-200px rounded-end"></th>
                     </tr>
                 </thead>
@@ -84,9 +83,7 @@
                             <a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" style='max-height:100px; overflow:scroll'>{!! $p->des !!}</a>
                         </td>
 
-                         <td class="px-3">
-                            <a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$p->price}}</a>
-                        </td>
+                       
 
 
                          <td class="border text-center">

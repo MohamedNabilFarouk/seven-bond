@@ -6,9 +6,8 @@ use App\Product;
 use App\Service;
 use App\Contact;
 use App\Subscribe;
-use App\Choose_us;
-use App\Team;
 use App\Blog;
+use App\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,11 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         
-        $services = Service::orderBy('id','DESC')->limit(16)->get();
-        $choose_us = Choose_us::orderBy('id','desc')->limit(6)->get();
-        $products = Product::orderBy('id','Asc')->limit(20)->get();
-        $team = Team::orderBy('id','desc')->get();
-        return view('site.index',compact('services','choose_us','products','team'));
+        $products = Product::orderBy('id','Asc')->limit(9)->get();
+        $projects = Project::orderBy('id','Asc')->limit(6)->get();
+        $blogs = Blog::orderBy('id','desc')->get();
+        return view('site.index',compact('products','blogs','projects'));
     }
    
     public function shop($category_id){
@@ -43,8 +41,12 @@ class HomeController extends Controller
         return view('site.shop',compact('products'));
     }
     public function allShop(){
-        $products = Product::orderBy('id','desc')->paginate(20);
+        $products = Product::orderBy('id','desc')->get();
         return view('site.shop',compact('products'));
+    }
+    public function allProjects(){
+        $projects = Project::orderBy('id','desc')->get();
+        return view('site.projects',compact('projects'));
     }
     public function blogs(){
         $blog_last = Blog::orderBy('id','desc')->first();
@@ -55,8 +57,12 @@ class HomeController extends Controller
     }
     public function productDetails($slug){
         $product = Product::where('slug',$slug)->first();
-        $related = Product::where('slug','!=',$slug)->inRandomOrder()->limit(8)->get();
+        $related = Product::where('slug','!=',$slug)->inRandomOrder()->limit(3)->get();
         return view('site.product_details',compact('product','related'));
+    }
+    public function projectDetails($slug){
+        $project = Project::where('slug',$slug)->first();
+        return view('site.project_details',compact('project'));
     }
     public function blogDetails($slug){
         $blog = Blog::where('slug',$slug)->first();
@@ -69,6 +75,9 @@ class HomeController extends Controller
     }
     public function about(){
         return view('site.about');
+    }
+    public function technical_data(){
+        return view('site.technical_data');
     }
     public function contact(){
         return view('site.contact');
