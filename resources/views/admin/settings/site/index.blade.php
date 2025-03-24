@@ -426,6 +426,101 @@
                                 </td>
                             </tr>
 
+                            {{-- meta --}}
+
+
+                            <tr>
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column m-auto">
+                                            <a href="#"
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Meta
+                                                Keywords EN</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column">
+                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
+                                            <textarea name="meta_keyword_en" rows="2" id="editor" class="form-control form-control-solid">{{ old('meta_keyword_en', $site_settings->meta_keyword_en) }}</textarea>
+                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column m-auto">
+                                            <a href="#"
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Meta
+                                                Keywords AR</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column">
+                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
+                                            <textarea name="meta_keyword_ar" rows="2" id="editor" class="form-control form-control-solid">{{ old('meta_keyword_ar', $site_settings->meta_keyword_ar) }}</textarea>
+                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column m-auto">
+                                            <a href="#"
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Meta
+                                                Description EN</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column">
+                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
+                                            <textarea name="meta_description_en" rows="2" id="editor" class="form-control form-control-solid">{{ old('meta_description_en', $site_settings->meta_description_en) }}</textarea>
+                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column m-auto">
+                                            <a href="#"
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Meta
+                                                Description AR</a>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex justify-content-start flex-column">
+                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
+                                            <textarea name="meta_description_ar" rows="2" id="editor" class="form-control form-control-solid">{{ old('meta_description_ar', $site_settings->meta_description_ar) }}</textarea>
+                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            {{-- end meta --}}
+
 
                         </tbody>
                         <!--end::Table body-->
