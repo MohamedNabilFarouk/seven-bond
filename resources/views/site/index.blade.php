@@ -1,7 +1,7 @@
 @extends('site.master')
 
 @section('content')
-@include('admin.includes.messages')
+    @include('admin.includes.messages')
     <!--Main Slider-->
     <section class="main-slider">
         <video autoplay muted loop class="rounded shadow-lg" style="width: 100%; height: auto;">
@@ -18,13 +18,13 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="image-two">
-                        <img src="{{ $site_settings->about_image}}" alt="">
+                        <img src="{{ $site_settings->about_image }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="about-column">
                         <h2>About our company</h2>
-                        <div class="text"> {!! app()->getLocale() == 'en' ? $site_settings->about_des: $site_settings->about_des_ar !!}</div>
+                        <div class="text"> {!! app()->getLocale() == 'en' ? $site_settings->about_des : $site_settings->about_des_ar !!}</div>
 
                         <div class="link"><a href="#" class="theme-btn btn-style-one">Read more</a></div>
                     </div>
@@ -34,7 +34,7 @@
     </section>
 
     <!-- welcome section -->
-    <section class="welcome-section-two sp-two">
+    {{-- <section class="welcome-section-two sp-two">
         <div class="container">
             <div class="row">
                 <div class="services-block-six col-lg-4 col-md-6">
@@ -85,60 +85,60 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- our services -->
     <!-- <section class="our-services sp-two grey-bg">
-        <div class="container">
-        <div class="sec-title centered">
-        <h2>Our Services</h2>
-        </div>
-        <div class="row">
-        <div class="col-lg-4 col-md-6">
-        <div class="services-block-seven">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/news-1.jpg') }}" alt="">
-               <div class="overlay">
-                   <a href="#" class="theme-btn btn-style-one">Read More</a>
+            <div class="container">
+            <div class="sec-title centered">
+            <h2>Our Services</h2>
+            </div>
+            <div class="row">
+            <div class="col-lg-4 col-md-6">
+            <div class="services-block-seven">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/news-1.jpg') }}" alt="">
+                   <div class="overlay">
+                       <a href="#" class="theme-btn btn-style-one">Read More</a>
+                   </div>
+               </figure>
+               <div class="lower-content">
+                   <h4>7 Bond Construction</h4>
+                   <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
                </div>
-           </figure>
-           <div class="lower-content">
-               <h4>7 Bond Construction</h4>
-               <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
-           </div>
-        </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-        <div class="services-block-seven">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/news-2.jpg') }}" alt="">
-               <div class="overlay">
-                   <a href="#" class="theme-btn btn-style-one">Read More</a>
+            </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+            <div class="services-block-seven">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/news-2.jpg') }}" alt="">
+                   <div class="overlay">
+                       <a href="#" class="theme-btn btn-style-one">Read More</a>
+                   </div>
+               </figure>
+               <div class="lower-content">
+                   <h4>Building Renovation</h4>
+                   <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
                </div>
-           </figure>
-           <div class="lower-content">
-               <h4>Building Renovation</h4>
-               <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
-           </div>
-        </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-        <div class="services-block-seven">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/news-3.jpg') }}" alt="">
-               <div class="overlay">
-                   <a href="#" class="theme-btn btn-style-one">Read More</a>
+            </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+            <div class="services-block-seven">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/news-3.jpg') }}" alt="">
+                   <div class="overlay">
+                       <a href="#" class="theme-btn btn-style-one">Read More</a>
+                   </div>
+               </figure>
+               <div class="lower-content">
+                   <h4>Architecture Planning</h4>
+                   <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
                </div>
-           </figure>
-           <div class="lower-content">
-               <h4>Architecture Planning</h4>
-               <div class="text"><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit</p></div>
-           </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </section> -->
+            </div>
+            </div>
+            </div>
+            </div>
+            </section> -->
 
     <!-- propducts -->
     <section class="project-section sp-one">
@@ -156,7 +156,8 @@
                         </li>
                         @foreach ($categories as $cat)
                             <li class="filter" data-role="button" data-filter=".{{ $cat->id }}">
-                                <span>{{ $cat->title }}</span></li>
+                                <span>{{ $cat->title }}</span>
+                            </li>
                         @endforeach
 
                     </ul>
@@ -171,7 +172,8 @@
                                 <img src="{{ asset($p->image) }}" alt="">
                                 <div class="box-content">
                                     <ul class="icon">
-                                        <li><a href="{{ route('product.details',$p->slug) }}"><i class="fa fa-link"></i> </a> </li>
+                                        <li><a href="{{ route('product.details', $p->slug) }}"><i class="fa fa-link"></i>
+                                            </a> </li>
 
                                     </ul>
                                 </div>
@@ -184,7 +186,8 @@
 
             </div>
 
-            <div class="link text-center mt-20"><a href="{{ route('Allshop') }}" class="theme-btn btn-style-one">View More</a>
+            <div class="link text-center mt-20"><a href="{{ route('Allshop') }}" class="theme-btn btn-style-one">View
+                    More</a>
             </div>
         </div>
     </section>
@@ -203,7 +206,8 @@
                                 <i class="flaticon-apartment"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->completed_projects }}">0</span>
+                                <span class="count-text" data-speed="3000"
+                                    data-stop="{{ $site_settings->completed_projects }}">0</span>
                                 <p>Successfull Projects</p>
                             </div>
                         </div>
@@ -218,7 +222,8 @@
                                 <i class="flaticon-construction"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->expert_worker }}">0</span>
+                                <span class="count-text" data-speed="3000"
+                                    data-stop="{{ $site_settings->expert_worker }}">0</span>
                                 <p>Expert Worker</p>
                             </div>
                         </div>
@@ -233,7 +238,8 @@
                                 <i class="flaticon-favorite-1"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->awards_won }}">0</span>
+                                <span class="count-text" data-speed="3000"
+                                    data-stop="{{ $site_settings->awards_won }}">0</span>
                                 <p>Awards Wining </p>
                             </div>
                         </div>
@@ -249,7 +255,8 @@
                                 <i class="flaticon-construction-1"></i>
                             </div>
                             <div class="count-outer">
-                                <span class="count-text" data-speed="3000" data-stop="{{ $site_settings->experience }}">0</span>
+                                <span class="count-text" data-speed="3000"
+                                    data-stop="{{ $site_settings->experience }}">0</span>
                                 <p>Year of experience</p>
                             </div>
                         </div>
@@ -268,35 +275,37 @@
             <!--Sortable Gallery-->
             <div class="mixitup-gallery">
 
-           
+
 
                 <div class="filter-list row clearfix">
 
 
                     @foreach ($projects as $p)
-                    <!-- projects block one -->
-                    <div class="projects-block-one mix all col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <img src="{{ asset($p->image) }}" alt="{{ $p->title_field }}" style="height:260px;">
-                            <div class="box-content">
-                                <a href="{{ route('project.details',$p->slug) }}">
-                                     <h4 style="color: #ffc107; margin-top: 100px;">{{ strtoupper($p->title_field) }}</h4>
-                                </a>
-                                {{-- <ul class="icon">
+                        <!-- projects block one -->
+                        <div class="projects-block-one mix all col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <img src="{{ asset($p->image) }}" alt="{{ $p->title_field }}" style="height:260px;">
+                                <div class="box-content">
+                                    <a href="{{ route('project.details', $p->slug) }}">
+                                        <h4 style="color: #ffc107; margin-top: 100px;">{{ strtoupper($p->title_field) }}
+                                        </h4>
+                                    </a>
+                                    {{-- <ul class="icon">
                                     <li><a href="{{ route('project.details',$p->slug) }}"><i class="fa fa-link"></i> </a> </li>
 
                                 </ul> --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
 
                 </div>
 
             </div>
 
-            <div class="link text-center mt-20"><a href="{{ route('allProjects') }}" class="theme-btn btn-style-one">View More</a></div>
+            <div class="link text-center mt-20"><a href="{{ route('allProjects') }}"
+                    class="theme-btn btn-style-one">View More</a></div>
         </div>
     </section>
 
@@ -309,13 +318,15 @@
                         <div class="image"><img src="{{ asset('site/img/background/4.jpg') }}" alt=""></div>
                         <h2>Request A Call Back</h2>
                         <div class="text">
-                            Get in touch with us through our channels below for any questions or queries and one of our representatives will get back to you as soon.
-                             </div>
+                            Get in touch with us through our channels below for any questions or queries and one of our
+                            representatives will get back to you as soon.
+                        </div>
                         <ul class="list-style-five mb-40">
-                            <li><i class="fa fa-map-marker"></i><strong>Address:</strong>{{app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar}}
+                            <li><i
+                                    class="fa fa-map-marker"></i><strong>Address:</strong>{{ app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar }}
                             </li>
                             <li><i class="fa fa-phone"></i><strong>Phone:</strong> {{ $site_settings->phone }} </li>
-                            <li><i class="fa fa-envelope"></i><strong>Email:</strong> {{$site_settings->email}}</li>
+                            <li><i class="fa fa-envelope"></i><strong>Email:</strong> {{ $site_settings->email }}</li>
                         </ul>
                         <ul class="social-icon-four">
                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -368,7 +379,7 @@
                             </div>
                             <div class="contact-section-btn">
                                 <div class="form-group">
-                                  
+
                                     <button class="theme-btn btn-style-one" type="submit"
                                         data-loading-text="Please wait...">Submit Now</button>
                                 </div>
@@ -382,58 +393,58 @@
 
     <!-- team section -->
     <!-- <section class="team-section sp-two">
-        <div class="container">
-        <div class="sec-title centered">
-        <h2>Expert Team</h2>
-        </div>
-        <div class="row">
-        <article class="team-member col-lg-3 col-md-6 col-sm-6">
-        <div class="inner-box">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/team-1.png') }}" alt="team member photo">
-           </figure>
-           <div class="member-info">
-               <a href="#"><h5>ben Afflick</h5></a>
-               <p>founder / ceo</p>
-           </div>
-        </div>
-        </article>
-        <article class="team-member col-lg-3 col-md-6 col-sm-6">
-        <div class="inner-box">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/team-2.png') }}" alt="team member photo">
-           </figure>
-           <div class="member-info">
-               <a href="#"><h5>ben Afflick</h5></a>
-               <p>founder / ceo</p>
-           </div>
-        </div>
-        </article>
-        <article class="team-member col-lg-3 col-md-6 col-sm-6">
-        <div class="inner-box">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/team-3.png') }}" alt="team member photo">
-           </figure>
-           <div class="member-info">
-               <a href="#"><h5>ben Afflick</h5></a>
-               <p>founder / ceo</p>
-           </div>
-        </div>
-        </article>
-        <article class="team-member col-lg-3 col-md-6 col-sm-6">
-        <div class="inner-box">
-           <figure class="img-box">
-               <img src="{{ asset('site/img/resource/team-4.png') }}" alt="team member photo">
-           </figure>
-           <div class="member-info">
-               <a href="#"><h5>ben Afflick</h5></a>
-               <p>founder / ceo</p>
-           </div>
-        </div>
-        </article>
-        </div>
-        </div>
-        </section> -->
+            <div class="container">
+            <div class="sec-title centered">
+            <h2>Expert Team</h2>
+            </div>
+            <div class="row">
+            <article class="team-member col-lg-3 col-md-6 col-sm-6">
+            <div class="inner-box">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/team-1.png') }}" alt="team member photo">
+               </figure>
+               <div class="member-info">
+                   <a href="#"><h5>ben Afflick</h5></a>
+                   <p>founder / ceo</p>
+               </div>
+            </div>
+            </article>
+            <article class="team-member col-lg-3 col-md-6 col-sm-6">
+            <div class="inner-box">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/team-2.png') }}" alt="team member photo">
+               </figure>
+               <div class="member-info">
+                   <a href="#"><h5>ben Afflick</h5></a>
+                   <p>founder / ceo</p>
+               </div>
+            </div>
+            </article>
+            <article class="team-member col-lg-3 col-md-6 col-sm-6">
+            <div class="inner-box">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/team-3.png') }}" alt="team member photo">
+               </figure>
+               <div class="member-info">
+                   <a href="#"><h5>ben Afflick</h5></a>
+                   <p>founder / ceo</p>
+               </div>
+            </div>
+            </article>
+            <article class="team-member col-lg-3 col-md-6 col-sm-6">
+            <div class="inner-box">
+               <figure class="img-box">
+                   <img src="{{ asset('site/img/resource/team-4.png') }}" alt="team member photo">
+               </figure>
+               <div class="member-info">
+                   <a href="#"><h5>ben Afflick</h5></a>
+                   <p>founder / ceo</p>
+               </div>
+            </div>
+            </article>
+            </div>
+            </div>
+            </section> -->
 
     <!-- blog section -->
     <section class="blog-section sp-two grey-bg">
@@ -442,31 +453,33 @@
                 <h2>Latest From Blog</h2>
             </div>
             <div class="three-item-carousel owl-carousel owl-theme owl-dot-none owl-nav-none">
-                @foreach($blogs as $b)
-                <!--New Block One-->
-                <div class="news-block-one">
-                    <figure class="image">
-                        <img src="{{ $b->image }}" alt="{{ $b->title }}" style="height:260px;">
-                        <figcaption class="overlay">
-                            <div class="box">
-                                <div class="content">
-                                    <a href="{{ route('blog.details',$b->slug) }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                @foreach ($blogs as $b)
+                    <!--New Block One-->
+                    <div class="news-block-one">
+                        <figure class="image">
+                            <img src="{{ $b->image }}" alt="{{ $b->title }}" style="height:260px;">
+                            <figcaption class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <a href="{{ route('blog.details', $b->slug) }}"><i class="fa fa-link"
+                                                aria-hidden="true"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                        </figcaption>
-                        <div class="date">{{ \Carbon\Carbon::parse($b->updated_at)->format('d') }} <br>{{ \Carbon\Carbon::parse($b->updated_at)->format('F') }}</div>
-                    </figure>
-                    <div class="lower-content">
-                        <div class="pl-30 pr-30">
-                            <h4><a href="{{ route('blog.details',$b->slug) }}">{{ $b->title }}</a></h4>
-                            <div class="text">
-                                <p>{!! \Illuminate\Support\Str::limit($b->summary, 100, '...') !!}</p>
+                            </figcaption>
+                            <div class="date">{{ \Carbon\Carbon::parse($b->updated_at)->format('d') }}
+                                <br>{{ \Carbon\Carbon::parse($b->updated_at)->format('F') }}</div>
+                        </figure>
+                        <div class="lower-content">
+                            <div class="pl-30 pr-30">
+                                <h4><a href="{{ route('blog.details', $b->slug) }}">{{ $b->title }}</a></h4>
+                                <div class="text">
+                                    <p>{!! \Illuminate\Support\Str::limit($b->summary, 100, '...') !!}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end -->
-            @endforeach
+                    <!-- end -->
+                @endforeach
 
             </div>
         </div>

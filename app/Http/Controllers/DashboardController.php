@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Code;
 use App\Http\Controllers\Controller;
-use App\Service;
+use App\Project;
 use App\Product;
 use App\Contact;
 use Carbon\Carbon;
@@ -15,13 +15,13 @@ class DashboardController extends Controller
 {
     //
     public function index(){
-  
+
         $messages = Contact::orderBy('id','desc')->limit('30')->get();
         $products = Product::all();
-        $services = Service::all();
+        $projects = Project::all();
 
 
-        return view('admin.dashboard',compact('messages','products','services'));
+        return view('admin.dashboard',compact('messages','products','projects'));
     }
 
 }

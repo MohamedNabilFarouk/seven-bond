@@ -59,15 +59,11 @@ Route::group(['middleware' => ['role:admin','auth'] ,'prefix'=>'admin'],function
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('/product','productController');
 Route::get('AddProduct','productController@create')->name('product.create');
-Route::resource('/service','servicesController');
 Route::resource('/project','ProjectController');
 Route::resource('/category','CategoriesController');
 Route::resource('/team','TeamController');
 Route::resource('/blog','blogsController');
 Route::get('AddBlog','blogsController@create')->name('blog.create');
-
-Route::resource('/chooseUs','chooseUsController');
-
 
 Route::resource('/user','UsersController');
 Route::resource('/message','ContactusController');
@@ -76,11 +72,11 @@ Route::resource('/subscribers','SubscribeController');
   /* Site Settings Routes */
   Route::get('site_settings', 'SiteSettingController@generalShow')->name('settings.site.show');
   Route::get('site_settings/customSections', function(){
-        return view('admin.settings.site.custom_sections.about_section_2');   
+        return view('admin.settings.site.custom_sections.about_section_2');
   })->name('settings.site.aboutsec');
 
   Route::get('site_settings/technicalData', function(){
-    return view('admin.technical_data.index');   
+    return view('admin.technical_data.index');
 })->name('site.technicalData');
   Route::put('site_settings', 'SiteSettingController@generalUpdate')->name('settings.site.update');
 

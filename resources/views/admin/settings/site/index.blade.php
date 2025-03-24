@@ -176,7 +176,8 @@
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column m-auto">
                                             <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">experience </a>
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">experience
+                                            </a>
                                         </div>
                                     </div>
                                 </td>
@@ -187,8 +188,8 @@
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
                                                 class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings->experience }}</a>
-                                            <input type="text" name="experience"
-                                                class="form-control form-control-solid" placeholder="experience" />
+                                            <input type="text" name="experience" class="form-control form-control-solid"
+                                                placeholder="experience" />
                                         </div>
                                     </div>
                                 </td>
@@ -200,7 +201,7 @@
                                         <div class="d-flex justify-content-start flex-column m-auto">
                                             <a href="#"
                                                 class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">
-                                                expert_worker  </a>
+                                                expert_worker </a>
                                         </div>
                                     </div>
                                 </td>
@@ -210,7 +211,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings->expert_worker}}</a>
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings->expert_worker }}</a>
                                             <input type="text" name="expert_worker"
                                                 class="form-control form-control-solid" placeholder="expert worker " />
                                         </div>
@@ -223,7 +224,8 @@
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column m-auto">
                                             <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center"> awards
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">
+                                                awards
                                                 won </a>
                                         </div>
                                     </div>
@@ -324,84 +326,6 @@
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column m-auto">
                                             <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Home
-                                                Middel Banner Text En</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
-                                            <textarea name="home_middel_banner_text_en" rows="2" id="editor" class="form-control form-control-solid">{{ $site_settings->home_middel_banner_text_en }}</textarea>
-                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Home
-                                                Middel Banner Text Ar</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            {{-- <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> about_des }}</a> --}}
-                                            <textarea name="home_middel_banner_text_ar" class="form-control form-control-solid" rows="2" id="editor">{{ $site_settings->home_middel_banner_text_ar }}</textarea>
-                                            {{-- <input type="text" name="about_des" class="form-control form-control-solid" placeholder="@lang('site.Enter New') About Description"/> --}}
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-
-                            
-
-                            
-
-
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Team
-                                                image</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <input type="file" name="team_section_image"
-                                                class="form-control input-sm team" accept="jpg, png, jpeg, svg">
-
-                                            <img src="{{ $site_settings->team_section_image }}" width="100px"
-                                                class="img-thumbnail team-preview mt-1" alt="">
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#"
                                                 class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">@lang('site.logo')</a>
                                         </div>
                                     </div>
@@ -445,30 +369,6 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">@lang('site.banner')</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <input type="file" name="banner" class="form-control input-sm image"
-                                                accept="jpg, png, jpeg, svg">
-
-                                            <img src="{{ $site_settings->banner }}" width="100px"
-                                                class="img-thumbnail image-preview mt-1" alt="">
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
 
 
 
@@ -478,7 +378,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex justify-content-start flex-column m-auto">
                                             <a href="#"
-                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center"Banner
+                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">Banner
                                                 Video</a>
                                         </div>
                                     </div>
@@ -492,7 +392,7 @@
                                                 value='{{ $site_settings->banner_vid }}'>
 
                                             <div class="position-relative mt-10">
-                                                <a href="{{ $site_settings->banner_vid}}" target="_blank"
+                                                <a href="{{ $site_settings->banner_vid }}" target="_blank"
                                                     class="btn btn-circle btn-primary btn-play ripple mx-auto mb-6 position-absolute"
                                                     style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;"
                                                     data-glightbox><i class="fa fa-play"></i></a>
@@ -530,149 +430,6 @@
                         </tbody>
                         <!--end::Table body-->
                     </table>
-
-
-
-                    <!--begin::Table-->
-                    {{-- <table class="table table-hover align-middle gs-0 gy-4">
-                            <!--begin::Table head-->
-                            <thead>
-                            <tr class="fw-bolder text-muted bg-light">
-                                <th class="ps-4 min-w-325px text-center">@lang('site.Site Settings')</th>
-                                <th class="ps-4 min-w-325px">@lang('site.English')</th>
-                                <th class="ps-4 min-w-325px">@lang('site.Arabic')</th>
-                            </tr>
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody class="border">
-
-                            <tr>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6 text-center">@lang('site.Title')</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> title_en }}</a>
-                                            <input type="text" name="title_en" class="form-control form-control-solid" placeholder="@lang('site.Enter New') @lang('site.Title') @lang('site.in English')"/>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> title_ar }}</a>
-                                            <input type="text" name="title_ar" class="form-control form-control-solid" placeholder="@lang('site.Enter New') @lang('site.Title') @lang('site.in Arabic')"/>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-
-
-
-
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Meta Title</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_title_en }}</a>
-                                            <input type="text" name="meta_title_en" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Meta Title @lang('site.in English')"/>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_title_ar }}</a>
-                                            <input type="text" name="meta_title_ar" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Meta Title @lang('site.in Arabic')"/>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Meta Description</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_description_en }}</a>
-                                            <input type="text" name="meta_description_en" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Meta Title @lang('site.in English')"/>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_description_ar }}</a>
-                                            <input type="text" name="meta_description_ar" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Meta Description @lang('site.in Arabic')"/>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column m-auto">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Meta Keywords</a>
-                                        </div>
-                                    </div>
-                                </td>
-
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_keyword_en }}</a>
-                                            <input type="text" name="meta_keyword_en" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Keywords @lang('site.in English')"/>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $site_settings -> meta_keyword_ar }}</a>
-                                            <input type="text" name="meta_keyword_ar" class="form-control form-control-solid" placeholder="@lang('site.Enter New') Meta Keywords @lang('site.in Arabic')"/>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-                            </tbody>
-                            <!--end::Table body-->
-                        </table> --}}
-
 
                     <!--end::Table-->
                 </div>
