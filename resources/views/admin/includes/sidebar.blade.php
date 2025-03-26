@@ -132,7 +132,7 @@
                  <!-- end products -->
                  <!-- category-->
                  <div class="menu-item">
-                     <a class="menu-link" href="{{ url('category') }}">
+                     <a class="menu-link" href="{{ route('category.index') }}">
                          <span class="menu-icon">
                              <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                              <span class="svg-icon svg-icon-2">
