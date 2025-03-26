@@ -9,13 +9,9 @@ trait imagesTrait
     function saveImages($photo, $folder)
     {
         $file_name = $photo -> hashName();
-        $path = $folder;
+        $path = public_path($folder);
         $photo -> move($path, $file_name);
         return $file_name;
     }
 
 }
-
-
-
-

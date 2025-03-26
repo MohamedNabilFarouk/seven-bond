@@ -348,11 +348,10 @@
     <script src="{{ asset('site/js/script.js') }}"></script>
 
     <script>
-        <!-- Include jQuery and Flexslider scripts
-        -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    </script>
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+
+        </script>
 
 
 </body>
