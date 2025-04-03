@@ -23,10 +23,10 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="about-column">
-                        <h2>About our company</h2>
+                        <h2>{{__("About our company")}}</h2>
                         <div class="text"> {!! app()->getLocale() == 'en' ? $site_settings->about_des : $site_settings->about_des_ar !!}</div>
 
-                        <div class="link"><a href="#" class="theme-btn btn-style-one">Read more</a></div>
+                        <div class="link"><a href="{{ url('aboutus') }}" class="theme-btn btn-style-one">{{ __("Read More") }}</a></div>
                     </div>
                 </div>
             </div>
@@ -186,8 +186,7 @@
 
             </div>
 
-            <div class="link text-center mt-20"><a href="{{ route('Allshop') }}" class="theme-btn btn-style-one">View
-                    More</a>
+            <div class="link text-center mt-20"><a href="{{ route('Allshop') }}" class="theme-btn btn-style-one">{{ __("View More") }}</a>
             </div>
         </div>
     </section>
@@ -208,7 +207,7 @@
                             <div class="count-outer">
                                 <span class="count-text" data-speed="3000"
                                     data-stop="{{ $site_settings->completed_projects }}">0</span>
-                                <p>Successfull Projects</p>
+                                <p>{{__("Successfull Projects")}}</p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +223,7 @@
                             <div class="count-outer">
                                 <span class="count-text" data-speed="3000"
                                     data-stop="{{ $site_settings->expert_worker }}">0</span>
-                                <p>Expert Worker</p>
+                                <p>{{__("Expert Worker")}}</p>
                             </div>
                         </div>
                     </div>
@@ -240,7 +239,7 @@
                             <div class="count-outer">
                                 <span class="count-text" data-speed="3000"
                                     data-stop="{{ $site_settings->awards_won }}">0</span>
-                                <p>Awards Wining </p>
+                                <p>{{__("Awards Wining")}} </p>
                             </div>
                         </div>
                     </div>
@@ -257,7 +256,7 @@
                             <div class="count-outer">
                                 <span class="count-text" data-speed="3000"
                                     data-stop="{{ $site_settings->experience }}">0</span>
-                                <p>Year of experience</p>
+                                <p>{{__("Year of experience")}}</p>
                             </div>
                         </div>
                     </div>
@@ -305,7 +304,7 @@
             </div>
 
             <div class="link text-center mt-20"><a href="{{ route('allProjects') }}"
-                    class="theme-btn btn-style-one">View More</a></div>
+                    class="theme-btn btn-style-one">{{ __("View More") }}</a></div>
         </div>
     </section>
 

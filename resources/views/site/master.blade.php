@@ -12,7 +12,12 @@
     <link href="{{ asset('site/plugins/revolution/css/settings.css') }}" rel="stylesheet">
     <link href="{{ asset('site/plugins/revolution/css/layers.css') }}" rel="stylesheet">
     <link href="{{ asset('site/plugins/revolution/css/navigation.css') }}" rel="stylesheet">
+    @if(app()->getLocale()=='en')
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
+    @else
+    <link href="{{ asset('site/css/style_rtl.css') }}" rel="stylesheet">
+    <link href="{{ asset('site/css/header_rtl.css') }}" rel="stylesheet">
+    @endif
     <link href="{{ asset('site/css/responsive.css') }}" rel="stylesheet">
 
     <!--Favicon-->
@@ -46,7 +51,7 @@
                         <!--Top Left-->
                         <div class="top-left pull-left">
                             <ul class="links-nav clearfix">
-                                <li>Welcome to SEVEN BOND Company</li>
+                                <li>{{ __('Welcome to SEVEN BOND Company') }}</li>
                             </ul>
                         </div>
 
@@ -94,7 +99,7 @@
                                             <span class="fa fa-envelope"></span>
                                         </div>
                                         <div class="text-holder">
-                                            <h6>Send Your Mail At</h6>
+                                            <h6>{{ __('Send Your Mail At') }}</h6>
                                             <p>{{ $site_settings->email }}</p>
                                         </div>
                                     </li>
@@ -103,7 +108,7 @@
                                             <span class="fa fa-clock-o"></span>
                                         </div>
                                         <div class="text-holder">
-                                            <h6>Phone</h6>
+                                            <h6>{{__('Phone')}}</h6>
                                             <a href="#">
                                                 <p>{{ $site_settings->phone }}</p>
                                             </a>
@@ -140,12 +145,12 @@
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li><a href="{{ url('/') }}">Home</a>
+                                        <li><a href="{{ url('/') }}">{{ __('Home') }}</a>
                                         </li>
-                                        <li><a href="{{ url('aboutus') }}">About</a></li>
+                                        <li><a href="{{ url('aboutus') }}">{{ __('About') }}</a></li>
 
-                                        <li><a href="{{ url('projects') }}">Projects</a></li>
-                                        <li><a href="{{ url('blogs') }}">Blog</a>
+                                        <li><a href="{{ url('projects') }}">{{ __("Projects") }}</a></li>
+                                        <li><a href="{{ url('blogs') }}">{{ __("News") }}</a>
                                             <!-- <ul>
                                                 <li><a href="blog-1.html">Blog Default</a></li>
                                                 <li><a href="blog-2.html">Blog Clasic</a></li>
@@ -184,25 +189,25 @@
                         <nav class="main-menu navbar-expand-lg">
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
-                                    <li><a href="{{ url('/') }}">Home</a>
+                                    <li><a href="{{ url('/') }}">{{ __("Home") }}</a>
                                     </li>
-                                    <li><a href="{{ url('aboutus') }}">About</a></li>
+                                    <li><a href="{{ url('aboutus') }}">{{ __("About") }}</a></li>
 
-                                    <li><a href="{{ url('projects') }}">Projects</a></li>
+                                    <li><a href="{{ url('projects') }}">{{ __("Projects") }}</a></li>
                                     </li>
-                                    <li><a href="{{ route('all.blogs') }}">Blog</a>
+                                    <li><a href="{{ route('all.blogs') }}">{{ __("News") }}</a>
                                         <!-- <ul>
                                             <li><a href="blog-1.html">Blog Default</a></li>
                                             <li><a href="blog-2.html">Blog Clasic</a></li>
                                             <li><a href="blog-details.html">Blog Details</a></li>
                                         </ul> -->
                                     </li>
-                                    <li><a href="{{ url('products') }}">Products</a>
+                                    <li><a href="{{ url('products') }}">{{ __("Products") }}</a>
 
                                     </li>
                                     <li><a href="{{ url('technical-data') }}">{{ __('Technical Data') }}</a></li>
 
-                                    <li><a href="{{ url('contactus') }}">Contact Us</a></li>
+                                    <li><a href="{{ url('contactus') }}">{{ __("Contact Us") }}</a></li>
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->

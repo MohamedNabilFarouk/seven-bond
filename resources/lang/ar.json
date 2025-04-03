@@ -3,12 +3,13 @@
 
 
 "Home" : "الرئيسية",
-"Blogs":"المدونات",
+"News":"الاخبار",
 "About us" : "من نحن",
 "Contact" : "اتصل بنا",
 "Blog" : "المدونة",
-"Who We are ?" : "من نحن ؟",
-"SMET provides solutions" : "سميت يوفر الحلول",
+"About our company" : "عن شركتنا",
+"Send Your Mail At":"ارسل بريدك علي",
+"Welcome to SEVEN BOND Company" : "مرحباً بكم في شركة SEVEN BOND",
 "What We Do?" : "ما الذي نفعله؟",
 "Why Choose Us?" : "لماذا أخترتنا؟",
 "A few reasons why our valued customers choose us" : "بعض الأسباب التي تجعل عملائنا الكرام يختاروننا",
@@ -296,7 +297,6 @@
 "Choose...":"اختر",
 "Which Morocco Bath Professional?":"اختر محترف الحمام المغربي",
 "Select Time":"اختر التوقيت",
-"News":"المدونات",
 "Pages":"الصفحات",
 "Contact us":"تواصل معنا",
 "Settings":"البيانات الاساسية",
@@ -342,7 +342,17 @@
 "Services Duration":"مدة الخدمات",
 "Completed Projects":"مشاريع مكتملة",
 "Happy Clients":"عملاء سعداء بخدمتنا",
-"Awards Won":"انجازات"
+"Awards Won":"انجازات",
+"Projects":"مشروعات",
+"Technical Data":"البيانات الفنية",
+"View All":"الكل",
+"View More":"المزيد",
+"Year of experience":"سنوات الخبرة",
+"Awards Wining":"التكريمات",
+"Expert Worker":"عمالة محترفة",
+"Successfull Projects":"مشروعات"
+
+
 
 
 
