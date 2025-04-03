@@ -42,6 +42,7 @@ class productController extends Controller
         $data = $request -> validate([
             'title' => 'required|string|max:100',
             'title_ar' => 'required|string|max:100',
+            'category_id' => 'required',
 
             'des' => 'string',
             'des_ar' => 'string',
@@ -113,6 +114,7 @@ class productController extends Controller
         $data = $request -> validate([
             'title' => 'required|string|max:100',
             'title_ar' => 'required|string|max:100',
+            'category_id' => 'required',
 
             'des' => 'string',
             'des_ar' => 'string',
