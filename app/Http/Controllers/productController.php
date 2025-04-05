@@ -51,6 +51,7 @@ class productController extends Controller
         ]);
         $data = $request->except(['gallery']);
         if ($request -> has('image')) {
+            
             $image = $this -> saveImages($request -> image, 'site/img/products');
             $data['image'] = $image;
         }
@@ -126,7 +127,7 @@ class productController extends Controller
         
        
 
-        if ($request -> has('image')) {
+       if ($request -> has('image')) {
             $image = $this -> saveImages($request -> image, 'site/img/products');
             $data['image'] = $image;
         }

@@ -56,15 +56,31 @@
                         </div>
 
                         <!--Top Right-->
+                        <div class="top-right pull-right" style="margin-left: 50px;">
+                            <div class="social-links clearfix">
+                              
+                                @if(\App::getLocale() == 'en')
+                                <a  href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}" >   <span class="fa fa-language mr-2"></span>العربية</a>
+
+                                @else
+                                <a  href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" >   <span class="fa fa-language mr-2"></span>En</a>
+
+                
+                                @endif
+                            </div>
+                            
+                        </div>
                         <div class="top-right pull-right">
                             <div class="social-links clearfix">
-                                <a href="#"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-linkedin"></span></a>
-                                <a href="#"><span class="fa fa-instagram"></span></a>
-                                <a href="#"><span class="fa fa-pinterest-p"></span></a>
+                                @foreach($social_settings as $s)
+                                <a href="{{ $s->value }}" target="_blank"><span class="fa fa-{{ $s->key }}"></span></a>
+                                @endforeach
+                            
                             </div>
+                            
                         </div>
+
+                       
                     </div>
 
                 </div>
@@ -236,10 +252,8 @@
                         <div class="inner">
                             <div class="footer-logo"><img src="{{ asset('site/images/rsz_logo.png') }}"
                                     alt="" style="max-width: 30%;"></div>
-                            <div class="text">Over 24 years experience and knowledge international standards,
-                                technologicaly changes and industrial systems, we are dedicated to provides seds the
-                                best and economical solutions to our valued.</div>
-                            <div class="link"><a href="#" class="thme-btn btn-style-twelve">Read More</a>
+                            <div class="text">{!! app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($site_settings->about_des,100,'...') : \Illuminate\Support\Str::limit($site_settings->about_des_ar,100,"....") !!}</div>
+                            <div class="link"><a href="{{ route('about') }}" class="thme-btn btn-style-twelve">{{ __("Read More") }}</a>
                             </div>
                         </div>
                     </div>
@@ -247,33 +261,28 @@
 
                     <!--footer link-->
                     <div class="footer-link footer-column-border col-xl-4 col-lg-6">
-                        <h3 class="footer-title">Usefull Links</h3>
+                        <h3 class="footer-title">{{__("Links")}}</h3>
                         <div class="inner">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <ul>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Financial Planning</a>
+                                        <li><a href="{{ route('about') }}"><i class="fa fa-angle-right"></i>{{ __("About") }}</a>
                                         </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Saving & Investing</a>
+                                       
+                                        <li><a href="{{ route("all.blogs") }}"><i class="fa fa-angle-right"></i>{{ __("News") }}</a>
                                         </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Mortgage Advice</a>
-                                        </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Retirement Plan</a>
-                                        </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Market Research</a>
-                                        </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Debt & Borrowing</a>
+                                        <li><a href="{{ route("contact") }}"><i class="fa fa-angle-right"></i>{{ __('Contact Us') }}</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6">
                                     <ul>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>About seven-bond</a>
+                                        <li><a href="{{ route('allProjects') }}"><i class="fa fa-angle-right"></i>{{ __("Projects") }}</a>
                                         </li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Customer FAQ’s</a></li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Testimonials</a></li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Get a Quote</a></li>
-                                        <li><a href="3.html"><i class="fa fa-angle-right"></i>Meet Our Team</a></li>
+                                        <li><a href="{{ route("Allshop") }}"><i class="fa fa-angle-right"></i>{{ __("Products") }}</a>
+                                        </li>
+                                        <li><a href="{{ route('technical_data') }}"><i class="fa fa-angle-right"></i>{{ __('Technical Data') }}</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -283,21 +292,20 @@
                     <!-- end -->
                     <!--footer newsletter one -->
                     <div class="footer-newsletter footer-column-border col-xl-4 col-lg-6">
-                        <h3 class="footer-title">Newsletter</h3>
+                        <h3 class="footer-title">{{ __('Newsletter') }}</h3>
                         <div class="inner">
-                            <div class="text">Sign up today for get hints, tips, latest updates & new product of
-                                seven-bond.</div>
-                            <form class="subscribe-form-two">
+                            <div class="text">{{ __("Sign up today for get hints, tips, latest updates & new product of seven-bond") }}</div>
+                            <form class="subscribe-form-two" action="{{ route('add.subscriber') }}" method="post">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="email" placeholder="Email Addres...">
+                                    <input type="email" name="email" placeholder={{ __("Email Address") }}">
                                     <button type="submit" class="fa fa-paper-plane"></button>
                                 </div>
                             </form>
                             <ul class="social-icon-four">
-                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                @foreach($social_settings as $s)
+                                <li><a href="{{ $s->value }}" target="_blank"><span class="fa fa-{{ $s->key }}"></span></a></li>
+                               @endforeach
                             </ul>
                         </div>
                     </div>

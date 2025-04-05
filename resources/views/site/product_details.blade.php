@@ -20,7 +20,7 @@
         <div class="container">
             <div class="flex-box-five">
                 <ul class="bread-crumb">
-                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">{{__("Home")}}</a></li>
                     <li>{{ $product->title_field }}</li>
                 </ul>
             </div>
@@ -37,10 +37,10 @@
 
                         <div class="product-tab-box">
                             <ul class="nav nav-tabs tab-menu" id="tab-list">
-                                <li class="active"><a href="#desc" data-toggle="tab">Descriprion</a></li>
-                                <li><a href="#Features" data-toggle="tab">Features</a></li>
-                                <li><a href="#Technical" data-toggle="tab">Technical Data</a></li>
-                                <li><a href="#Advantages" data-toggle="tab">Advantages</a></li>
+                                <li class="active"><a href="#desc" data-toggle="tab">{{__("Descriprion")}}</a></li>
+                                <li><a href="#Features" data-toggle="tab">{{__("Features")}}</a></li>
+                                <li><a href="#Technical" data-toggle="tab">{{__("Technical Data")}}</a></li>
+                                <li><a href="#Advantages" data-toggle="tab">{{__("Advantages")}}</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="desc">
@@ -183,7 +183,7 @@
                         <!--Start related product -->
                         <div class="related-product">
                             <div class="inner-page-title">
-                                <h4>Related Products</h4>
+                                <h4>{{__("Related Products")}}</h4>
                             </div>
                             <br>
                             <div class="row">

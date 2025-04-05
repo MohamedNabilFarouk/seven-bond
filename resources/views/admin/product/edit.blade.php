@@ -38,18 +38,18 @@
 
                 <div class="form-group mb-10">
                     <label for="exampleFormControlInput1" class="required form-label">title En</label>
-                    <input type='text' name="title" class="form-control" value="{{ $product->title }}" />
+                    <input type='text' name="title" class="form-control" value="{{ $product->title }}" required />
                 </div>
                 <div class="form-group mb-10">
                     <label for="exampleFormControlInput1" class="required form-label">title Ar</label>
-                    <input type='text' name="title_ar" class="form-control" value="{{ $product->title_ar }}" />
+                    <input type='text' name="title_ar" class="form-control" value="{{ $product->title_ar }}" required  />
                 </div>
 
 
                 <div class="form-group mb-10">
                     <label for="exampleFormControlInput1" class="required form-label">Category</label>
-                   <select class="form-control" name='category_id'>
-                    <option value='null' >Select Category</option>
+                   <select class="form-control" name='category_id' required >
+                    <option value='0' >Select Category</option>
 
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}" @if ($category->id == $product->category_id) selected @endif>{{ $category->title_en  }}</option>

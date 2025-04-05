@@ -7,7 +7,7 @@
   <!--Page Title-->
   <section class="page-title" style="background-image:url({{ asset('site/img/background/3.jpg') }});">
     <div class="container">
-        <h1>About Us</h1>
+        <h1>{{__("About us")}}</h1>
     </div>
 </section>
 <!--End Page Title-->
@@ -23,7 +23,7 @@
           </div>
           <div class="col-lg-7">
               <div class="about-column">
-                  <h2>About our company</h2>
+                  <h2>{{__("About our company")}}</h2>
                   <div class="text">{!! app()->getLocale() == 'en' ? $site_settings->about_des: $site_settings->about_des_ar !!}</div>
                 
               </div>

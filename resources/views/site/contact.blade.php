@@ -11,7 +11,7 @@
    <!--Page Title-->
    <section class="page-title" style="background-image:url({{ asset('site/img/background/3.jpg') }});">
     <div class="container">
-        <h1>Contact Us</h1>
+        <h1>{{__("Contact Us")}}</h1>
     </div>
 </section>
 <!--End Page Title-->
@@ -21,8 +21,8 @@
     <div class="container">
         <div class="flex-box-five">
             <ul class="bread-crumb">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Contact Us</li>
+                <li><a href="{{ url('/') }}">{{__("Home")}}</a></li>
+                <li>{{__("Contact Us")}}</li>
             </ul>
         </div>
     </div>
@@ -40,33 +40,33 @@
                 <div class="row clearfix">
                     <div class="col-md-6 col-sm-6 col-xs-12">        
                         <div class="form-group style-two">
-                            <input type="text" name="name" class="form-control" value="" placeholder="Name" required="">
+                            <input type="text" name="name" class="form-control" value="" placeholder="{{__("Name")}}" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group style-two">
-                            <input type="email" name="email" class="form-control required email" value="" placeholder="Email" required="">
+                            <input type="email" name="email" class="form-control required email" value="" placeholder="{{__("Email")}}" required="">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group style-two">
-                            <input type="text" name="phone" class="form-control" value="" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" value="" placeholder="{{__("Phone")}}">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group style-two">
-                            <input type="text" name="subject" class="form-control" value="" placeholder="Subject">
+                            <input type="text" name="subject" class="form-control" value="" placeholder="{{__("subject")}}">
                         </div>
                     </div>  
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group style-two">
-                            <textarea name="message" class="form-control textarea required" placeholder="Your Message"></textarea>
+                            <textarea name="message" class="form-control textarea required" placeholder="{{ __("Message")}}"></textarea>
                         </div>
                     </div>                                                
                 </div>
                 <div class="contact-section-btn text-center">
                     <div class="form-group style-two">
-                        <input class="theme-btn btn-style-one" type="submit" value='send message'>
+                        <input class="theme-btn btn-style-one" type="submit" value='{{ __("Send Message") }}'>
                     </div>
                 </div> 
             </form>

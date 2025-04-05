@@ -269,7 +269,7 @@
     <section class="project-section sp-one">
         <div class="container">
             <div class="sec-title centered">
-                <h2>Latest Project</h2>
+                <h2>{{ __('Latest Project') }}</h2>
             </div>
             <!--Sortable Gallery-->
             <div class="mixitup-gallery">
@@ -315,17 +315,17 @@
                 <div class="col-lg-6">
                     <div class="request-callback sp-two">
                         <div class="image"><img src="{{ asset('site/img/background/4.jpg') }}" alt=""></div>
-                        <h2>Request A Call Back</h2>
+                        <h2>{{ __("Request A Call Back") }}</h2>
                         <div class="text">
-                            Get in touch with us through our channels below for any questions or queries and one of our
-                            representatives will get back to you as soon.
+                            {{ __("Get in touch with us through our channels below for any questions or queries and one of our representatives will get back to you as soon.") }}
+
                         </div>
                         <ul class="list-style-five mb-40">
                             <li><i
-                                    class="fa fa-map-marker"></i><strong>Address:</strong>{{ app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar }}
+                                    class="fa fa-map-marker"></i><strong>{{ __('Address') }}:</strong>{{ app()->getLocale() == 'en' ? $site_settings->address_en : $site_settings->address_ar }}
                             </li>
-                            <li><i class="fa fa-phone"></i><strong>Phone:</strong> {{ $site_settings->phone }} </li>
-                            <li><i class="fa fa-envelope"></i><strong>Email:</strong> {{ $site_settings->email }}</li>
+                            <li><i class="fa fa-phone"></i><strong>{{ __('Phone') }}:</strong> {{ $site_settings->phone }} </li>
+                            <li><i class="fa fa-envelope"></i><strong>{{ __('Email') }}:</strong> {{ $site_settings->email }}</li>
                         </ul>
                         <ul class="social-icon-four">
                             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -345,34 +345,34 @@
                                     <div class="form-group">
                                         <span class="flaticon-social"></span>
                                         <input type="text" name="name" class="form-control" value=""
-                                            placeholder="Name" required="">
+                                            placeholder="{{ __("Name") }}" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-note-1"></span>
                                         <input type="email" name="email" class="form-control required email"
-                                            value="" placeholder="Email" required="">
+                                            value="" placeholder="{{ __("Email") }}" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-favorite"></span>
                                         <input type="text" name="phone" class="form-control" value=""
-                                            placeholder="Phone">
+                                            placeholder="{{ __("Phone") }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-favorite"></span>
                                         <input type="text" name="subject" class="form-control" value=""
-                                            placeholder="Subject">
+                                            placeholder="{{ __("subject") }}">
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <span class="flaticon-draw"></span>
-                                        <textarea name="message" class="form-control textarea required" placeholder="Your Message"></textarea>
+                                        <textarea name="message" class="form-control textarea required" placeholder="{{ __("Message") }}"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +380,7 @@
                                 <div class="form-group">
 
                                     <button class="theme-btn btn-style-one" type="submit"
-                                        data-loading-text="Please wait...">Submit Now</button>
+                                        data-loading-text="Please wait...">{{ __("Send Message") }}</button>
                                 </div>
                             </div>
                         </form>
@@ -449,7 +449,7 @@
     <section class="blog-section sp-two grey-bg">
         <div class="container">
             <div class="sec-title centered">
-                <h2>Latest From Blog</h2>
+                <h2>{{__("Latest From Blog")}}</h2>
             </div>
             <div class="three-item-carousel owl-carousel owl-theme owl-dot-none owl-nav-none">
                 @foreach ($blogs as $b)
@@ -485,7 +485,7 @@
     </section>
 
     <!-- client logo -->
-    <section class="client-logo sp-one">
+    {{-- <section class="client-logo sp-one">
         <div class="container">
             <div class="five-item-carousel owl-carousel owl-theme owl-dot-none owl-nav-none">
                 <div class="img-box">
@@ -505,5 +505,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @stop

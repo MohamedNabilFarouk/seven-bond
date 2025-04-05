@@ -3,7 +3,7 @@
   <!--Page Title-->
   <section class="page-title" style="background-image:url({{ asset('site/img/background/3.jpg') }});">
     <div class="container">
-        <h1>Projects</h1>
+        <h1>{{__("Projects")}}</h1>
     </div>
 </section>
 <!--End Page Title-->
@@ -13,8 +13,8 @@
     <div class="container">
         <div class="flex-box-five">
             <ul class="bread-crumb">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Projects</li>
+                <li><a href="{{ url('/') }}">{{__("Home")}}</a></li>
+                <li>{{__("Projects")}}</li>
             </ul>
         </div>
     </div>

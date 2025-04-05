@@ -24,6 +24,6 @@ class SubscribeController extends Controller
         $row = Subscribe ::find($id);
         $row-> delete();
         session() -> flash('success', trans('deleted successfully'));
-        return redirect() -> route('subscribe.index');
+        return redirect() -> route('subscribers.index');
     }
 }

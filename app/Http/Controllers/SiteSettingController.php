@@ -43,10 +43,12 @@ class SiteSettingController extends Controller
             $request_data['logo']= $logoPath;
         }
         if($request->has('banner_vid')){
-            if ($site_settings -> banner_vid != 'defaultVid.png') {
-                File::delete(public_path('site/img'.basename($site_settings->banner_vid)));
-                // Storage::disk('public')->delete($site_settings -> banner_vid);
-            } // end of inner if
+
+            $Path = public_path('site/img/'.basename($site_settings->banner_vid));
+            if (File::exists($Path)) {
+                  File::delete($Path);
+              }
+
             $vidPath = $this->saveImages( $request -> banner_vid , 'site/img');
             $request_data['banner_vid']= $vidPath;
         }

@@ -4,6 +4,8 @@
 
 "Home" : "الرئيسية",
 "News":"الاخبار",
+"Newsletter":"الاخبار",
+"Links":"الروابط",
 "About us" : "من نحن",
 "Contact" : "اتصل بنا",
 "Blog" : "المدونة",
@@ -94,7 +96,7 @@
 "Message":"الرسالة",
 "Send" : "ارسال",
 
-"Contact Us" : "اتصل بنا",
+"Contact Us" : "تواصل معنا",
 "Hotel Info" : "تفاصيل الفندق",
 
 
@@ -204,7 +206,7 @@
 "Continue to Pay":"ادفع الان",
 "Product Detail":"تفاصيل المنتج",
 "Service Detail":"تفاصيل الخدمة",
-"Related products":"منتجات ذات صلة",
+"Related Products":"منتجات ذات صلة",
 "Related Packages":"باقات ذات صلة",
 "Related Services":"خدمات ذات صلة",
 "Buy Now":"اشتري الان",
@@ -350,7 +352,17 @@
 "Year of experience":"سنوات الخبرة",
 "Awards Wining":"التكريمات",
 "Expert Worker":"عمالة محترفة",
-"Successfull Projects":"مشروعات"
+"Successfull Projects":"مشروعات",
+"Latest Project":"احدث مشروعات",
+"Request A Call Back":"طلب مكالمة",
+"Latest From Blog":"احدث الاخبار",
+"Recent News":"احدث الاخبار",
+"Descriprion":"تفاصيل",
+"Features":"السمات",
+"Advantages":"المزايا",
+"Sign up today for get hints, tips, latest updates & new product of seven-bond":"سجل اليوم للحصول على نصائح، وتلميحات، وآخر التحديثات، ومنتجات جديدة من سيفن بوند.",
+"Get in touch with us through our channels below for any questions or queries and one of our representatives will get back to you as soon.":"تواصل معنا عبر قنواتنا أدناه لأي أسئلة أو استفسارات، وسيتواصل معك أحد ممثلينا في أقرب وقت."
+
 
 
 

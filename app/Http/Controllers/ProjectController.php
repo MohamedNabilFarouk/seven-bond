@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Str;
+use Illuminate\Support\Facades\File;
 class ProjectController extends Controller
 {
     use imagesTrait;
@@ -104,10 +105,15 @@ class ProjectController extends Controller
 
         $project = Project ::find($id);
         $data = $request->except(['gallery']);
-        
+        // dd(asset($project -> image));
        
 
         if ($request -> has('image')) {
+            $imagePath = public_path('site/img/projects/'.basename($project->image));
+              if (File::exists($imagePath)) {
+                    File::delete($imagePath);
+                }
+
            
             $image = $this -> saveImages($request -> image, 'site/img/projects');
             $data['image'] = $image;
@@ -124,8 +130,8 @@ class ProjectController extends Controller
                // start save room Gallery
                if ($request -> has('gallery')) {
                    $project->gallery()->delete();
-                  
                    foreach($request->gallery as $i){
+
                        $image = $this -> saveImages($i, 'site/img/projects');
                        $gallery = new ProjectGallery();
                        $gallery->project_id = $project->id;

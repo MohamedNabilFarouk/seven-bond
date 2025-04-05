@@ -15,7 +15,7 @@
       <div class="container">
           <div class="flex-box-five">
               <ul class="bread-crumb">
-                  <li><a href="{{ url('/') }}">Home</a></li>
+                  <li><a href="{{ url('/') }}">{{__("Home")}}</a></li>
                   <li>{{ $blog->title }}</li>
               </ul>
              
@@ -53,7 +53,7 @@
                  
                     <div class="sidebar-widget news-widget">
                         <div class="sidebar-title">
-                            <h4>Recent News</h4>
+                            <h4>{{__("Recent News")}}</h4>
                         </div>
                 @foreach($related as $r)
                         <div class="post">

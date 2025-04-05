@@ -56,16 +56,16 @@ class HomeController extends Controller
         return view('site.blogs',compact('blogs','blog_last','random_blogs'));
     }
     public function productDetails($slug){
-        $product = Product::where('slug',$slug)->first();
+        $product = Product::where('slug', $slug)->firstOrFail();
         $related = Product::where('slug','!=',$slug)->inRandomOrder()->limit(3)->get();
         return view('site.product_details',compact('product','related'));
     }
     public function projectDetails($slug){
-        $project = Project::where('slug',$slug)->first();
+        $project = Project::where('slug',$slug)->firstOrFail();
         return view('site.project_details',compact('project'));
     }
     public function blogDetails($slug){
-        $blog = Blog::where('slug',$slug)->first();
+        $blog = Blog::where('slug',$slug)->firstOrFail();
         $related = Blog::where('slug','!=',$slug)->inRandomOrder()->limit(8)->get();
         return view('site.blog_details',compact('blog','related'));
     }
