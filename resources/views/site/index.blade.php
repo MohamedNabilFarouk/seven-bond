@@ -163,7 +163,7 @@
                     </ul>
                 </div>
 
-                <div class="filter-list row clearfix">
+                <div class="filter-list row clearfix" style="max-height: 600px; overflow: hidden;">
 
                     @foreach ($products as $p)
                         <!-- projects block one -->
@@ -281,7 +281,7 @@
 
                     @foreach ($projects as $p)
                         <!-- projects block one -->
-                        <div class="projects-block-one mix all col-lg-4 col-md-6 col-sm-12">
+                        <div class="projects-block-one  col-lg-4 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <img src="{{ asset($p->image) }}" alt="{{ $p->title_field }}" style="height:260px;">
                                 <div class="box-content">

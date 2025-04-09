@@ -45,6 +45,7 @@
 
 .sticky-header .logo{
   padding: 15px 0px;
+  float: left;
 }
 
 .fixed-header .sticky-header{

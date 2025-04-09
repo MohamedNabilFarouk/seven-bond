@@ -194,8 +194,8 @@
             <div class="sticky-header">
                 <div class="container clearfix">
                     <!--Logo-->
-                    <div class="logo float-left">
-                        <a href="#" class="img-responsive"><img src="{{ asset('site/images/rsz_logo.png') }}"
+                    <div class="logo">
+                        <a href="#" class="img-responsive"><img src="{{ $site_settings->logo }}"
                                 alt="" title="" style="max-width: 50%;"></a>
                     </div>
 
@@ -350,7 +350,50 @@
     <script src="{{ asset('site/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
     <script src="{{ asset('site/plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
     <script src="{{ asset('site/js/main-slider-script.js') }}"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all filter buttons
+    const filters = document.querySelectorAll('.filter');
+    // Get all product items
+    const products = document.querySelectorAll('.projects-block-one');
 
+    // Function to filter products based on the selected category
+    function filterProducts(filterValue) {
+        products.forEach(product => {
+            if (filterValue === 'all' || product.classList.contains(filterValue)) {
+                product.style.display = 'block'; // Show product
+            } else {
+                product.style.display = 'none'; // Hide product
+            }
+        });
+    }
+
+    // Event listener for filter buttons
+    filters.forEach(filter => {
+        filter.addEventListener('click', function () {
+            filters.forEach(btn => btn.classList.remove('active')); // Remove active class from all buttons
+            this.classList.add('active'); // Add active class to the clicked button
+            const filterValue = this.getAttribute('data-filter').substring(1); // Get filter value without the dot
+            filterProducts(filterValue); // Call the filtering function
+        });
+    });
+
+    // Initially show all products
+    filterProducts('all');
+
+    // Handle "View All" button click (assuming it has the data-filter 'all')
+    const viewAllButton = document.querySelector('[data-filter="all"]');
+    if (viewAllButton) {
+        viewAllButton.addEventListener('click', function () {
+            // When "View All" is clicked, show all products
+            filters.forEach(btn => btn.classList.remove('active')); // Remove active class from all buttons
+            this.classList.add('active'); // Add active class to the "View All" button
+            filterProducts('all'); // Show all products again
+        });
+    }
+});
+
+    </script>
 
 
     <script src="{{ asset('site/js/plugins.js') }}"></script>
@@ -360,12 +403,7 @@
 
     <script src="{{ asset('site/js/script.js') }}"></script>
 
-    <script>
-
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-
-        </script>
-
+    
 
 </body>
 

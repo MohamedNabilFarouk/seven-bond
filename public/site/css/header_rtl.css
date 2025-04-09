@@ -46,6 +46,7 @@
 
 .sticky-header .logo{
   padding: 15px 0px;
+  float: right;
 }
 
 .fixed-header .sticky-header{
@@ -871,7 +872,7 @@
 .header-contact-info{
   overflow: hidden;
 }
-.header-contact-info ul{}
+
 .header-contact-info ul li {
   border-right: 1px solid #f7f7f7;
   display: inline-block;
@@ -891,6 +892,7 @@
   width: 48px;
   border: 1px dashed #faaa1d;
   border-radius: 50%;
+  float: right;
 }
 .header-contact-info ul li .iocn-holder span {
   color: #faaa1d;

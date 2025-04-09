@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         
-        $products = Product::orderBy('id','Asc')->limit(9)->get();
+        $products = Product::orderBy('id','Asc')->get();
         $projects = Project::orderBy('id','Asc')->limit(6)->get();
         $blogs = Blog::orderBy('id','desc')->get();
         return view('site.index',compact('products','blogs','projects'));
