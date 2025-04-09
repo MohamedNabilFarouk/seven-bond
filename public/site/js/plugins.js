@@ -27555,6 +27555,7 @@ function ssc_wheel(e) {
     }
     ssc_scrollArray(n, -r, -i);
     e.preventDefault()
+	
 }
 
 function ssc_keydown(e) {
